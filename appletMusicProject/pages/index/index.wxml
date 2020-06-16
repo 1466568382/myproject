@@ -1,0 +1,47 @@
+<!--index.wxml-->
+  <!-- 搜索框 -->
+<!-- <view class="search" bindtap="goSearch">
+<view class="searchBox">
+    <image src="../../images/search1.png" class="glass"></image>
+    <text class="keyword">搜索音乐、歌词</text>
+</view>
+</view> -->
+<!-- 轮播图 -->
+<view class="banner">
+  <view>
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+    <block wx:for="{{imgs}}"  wx:key="*this" >
+      <swiper-item class="item">
+        <view>
+          <image src="{{item}}" data-index="{{index}}" bindtap="bannerGoPalyer"></image>
+        </view>
+      </swiper-item>
+      </block>
+  </swiper>
+</view>
+</view>
+<!-- 推荐音乐 -->
+<view class="recommend">
+  <view class="title">
+      最新音乐
+  </view>
+  <view class="ul">
+     <view class="li" wx:for="{{newSongList}}"   bindtap="goPalyer" data-id="{{item.id}}"
+      data-image="{{item.picUrl}}" 
+      data-name="{{item.name}}"
+      data-author="{{item.song.artists[0].name}}"
+     
+      wx:key="*this">
+        <view class="song">
+          {{item.name}}
+        </view>
+        <view class="singer">
+           {{item.song.artists[0].name}} -  {{item.name}}
+        </view>
+        <image class="play" src="../../images/indexplay.png"></image>
+     </view>
+  </view>
+</view>
+<view class="loading" wx:if="{{loadingShow}}">
+  <image class="loadingIcon" src="../../images/loading.svg"></image>
+</view>

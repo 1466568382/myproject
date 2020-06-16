@@ -1,0 +1,97 @@
+/* pages/play/play.wxss */
+/* 播放器 */
+video{
+  height: 200px;
+  position:fixed;
+  top: 0;
+  left: 0;
+}
+
+/* info */
+.title{
+  text-align: center;
+  margin-top: 225px;
+  margin-bottom: 15px;
+  color: #121212;
+  font-weight: bold;
+  font-size: 16px;
+}
+.info{
+  font-size: 10px;
+  text-align: center;
+  color: #787878;
+}
+.content{
+  margin-top: 20px;
+  padding: 0  10px;
+  color: #323232;
+  font-size: 12px;
+  line-height: 18px
+}
+.moreTitle{
+  padding: 0 10px;
+  margin:20px 0 10px 0;
+  font-size: 12px;
+  overflow: hidden;
+}
+.moreTitle .h3{
+  color: #0e0e0e;
+  float: left;
+  font-weight: bold;
+}
+.moreTitle .more{
+  color: #747474;
+  float: right;
+  
+}
+
+
+/* 横向滑动 */
+.scroll-view_H{
+  white-space: nowrap;
+  margin-bottom: 20px;
+}
+.scroll-view_H .card{
+  display: inline-block;
+  width: 40%;
+  margin-right: 10px;
+  position: relative;
+  overflow: hidden;
+
+}
+.scroll-view_H .card:first-of-type {
+  margin-left: 10px;
+}
+
+.scroll-view_H .card image{
+  display: block;
+  width: 100%;
+  filter:brightness(0.8);
+}
+
+.scroll-view_H .card .cardContent{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+   width: 100%;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px;
+  box-sizing:border-box;
+
+
+}
+.scroll-view_H .card .cardContent .cardTitle{
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 遮罩层 */
+van-overlay .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+}

@@ -1,0 +1,9 @@
+<!--pages/posts/posts.wxml-->
+<!-- 把数据传到组件中 -->
+<post-card wx:for="{{posts}}" wx:key="index" post="{{item}}"></post-card>
+<!-- 剩下的步骤 把数据传到组件中 然后处理数据  使用tool -->
+
+<!-- loading -->
+<van-loading size="24px" wx:if="{{showLoading}}">加载中...</van-loading>
+<!-- 没有更多提示 -->
+<van-notify id="van-notify" />

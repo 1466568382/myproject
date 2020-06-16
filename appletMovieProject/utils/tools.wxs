@@ -1,0 +1,19 @@
+var parseCates=function(cates){
+  if(cates){
+    //遍历合成一个字符串
+    return cates.map(function(item){
+      return item.catename
+    }).join(",")
+  }else{
+    return ''
+  }
+}
+// 处理时间
+var parseTime=function(t){
+  return parseInt(t/60)+"'"+t%60+"'";
+}
+// 导出
+module.exports={
+  parseTime: parseTime,
+  parseCates: parseCates
+}

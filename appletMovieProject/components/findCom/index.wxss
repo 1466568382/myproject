@@ -1,0 +1,68 @@
+/* components/findCom/index.wxss */
+
+.h3 {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+}
+
+.card {
+  position: relative;
+  display: flex;
+}
+
+.card .img {
+  vertical-align: middle;
+  max-width: 100%;
+  width: 100%;
+  filter: brightness(0.8);
+  height: 200px;
+}
+
+.card  .dl {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 15px;
+  margin: 0;
+  color: white;
+  font-size: 14px;
+}
+
+.card .dt {
+  width: 40px;
+  height: 20px;
+  font-size: 12px;
+}
+
+.card .dd {
+  margin: 0;
+}
+
+.special {
+  display: flex;
+  flex-wrap: wrap;
+}
+.special .card{
+  width: 100%;
+  height: 200px;
+  color: red;
+}
+
+.special .card .dl {
+  font-size: 12px;
+}
+
+
+.special .card .img {
+  vertical-align: middle;
+  max-width: 100%;
+  filter: brightness(0.8);
+  height: 100%;
+}
+
+

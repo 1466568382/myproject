@@ -1,0 +1,37 @@
+<view class="header">
+  <image src="../../images/hotbg.jpg"></image>
+  <view class="content">
+    <view class="p">动感音乐</view>
+    <view class="h1">热歌榜</view>
+    <view class="date">更新日期: 03月26日</view>
+
+  </view>
+  <view class="bg"></view>
+</view>
+
+<!-- 排行榜 -->
+<view class="recommend {{moreSong?'more-song':''}}">
+  <view class="ul">
+    <view class="li" wx:for="{{hotSongList}}"  wx:key="*this" 
+     bindtap="goPalyer"
+     data-id="{{item.id}}" 
+     data-image="{{item.al.picUrl}}"
+      data-name="{{item.name}}"
+       data-author="{{item.ar[0].name}}">
+      <view class="rank">{{index<9?'0':''}}{{index+1}}</view>
+      <view class="song">
+        {{item.name}}
+      </view>
+      <view class="singer">
+        {{item.ar[0].name}} - {{item.name}}
+      </view>
+      <image class="play" src="../../images/indexplay.png"></image>
+    </view>
+  </view>
+</view>
+<view class="getMore" bindtap="clickMore">{{getMoreText}}</view>
+
+<!-- loading -->
+<view class="loading" wx:if="{{loadingShow}}">
+  <image class="loadingIcon" src="../../images/loading.svg"></image>
+</view>

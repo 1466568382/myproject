@@ -1,0 +1,62 @@
+<!--pages/player/player.wxml-->
+<!-- 歌名&歌手 -->
+<view class="box">
+  <view class="title">
+    <view class="song">{{name}}</view>
+    <view class="singer">{{author}}</view>
+  </view>
+  <!--第一层层：背景图背景图，高斯模糊-->
+  <view class="bg">
+    <image class="poster" mode="scaleToFill" src="{{poster}}"></image>
+  </view>
+  <!--第二层层：灰色蒙层-->
+  <view class="bg-gray">
+  </view>
+  <!-- cd -->
+  <view class="cdBox"  bindtap="audioPlay" >
+    <view class="cd {{play?'rotate-360-paused':'rotate-360'}}">
+      <image src="../../images/cdbg.png" class="cdbg"></image>
+      <image class="cdCenter" src="{{poster}}"></image>
+    </view>
+    <!-- 暂停 -->
+     <image wx:if="{{play}}" class="stopSong" src="../../images/stopSong.png"></image>
+  </view>
+
+  <!-- 歌词 -->
+  <view class="lyric">
+    <view class="ul" style="transform: translateY({{distance}}px);">
+      <view wx:for="{{lyricList}}" wx:key="*this" class="li {{activeIndex===index?'active':''}} ">
+        {{item.text}}
+      </view>
+    </view>
+  </view>
+  <!-- 控制 -->
+  <!-- <view class="handle">
+    <view class="button">
+      <view class="item">
+        <image src="../../images/prev.png"></image>
+      </view>
+      <view class="item">
+        <image bindtap="audioPlay" src="{{play?'../../images/play.png':'../../images/stop.png'}}"></image>
+      </view>
+      <view class="item">
+        <image src="../../images/next.png"></image>
+      </view>
+      <view class="like" bindtap="myLike">
+        <image src="{{like?'../../images/like2.png':'../../images/like.png'}}"></image>
+      </view>
+    </view>
+  </view> -->
+
+
+  <!-- 音频播放 -->
+  <!-- audio.wxml -->
+  <audio src="{{src}}" id="myAudio" bindtimeupdate="change"></audio>
+
+</view>
+
+
+<!-- loading -->
+<view class="loading" wx:if="{{loadingShow}}">
+  <image class="loadingIcon" src="../../images/loading.svg"></image>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "findCom":"../../components/findCom",
+    "post-card":"../../components/postcard"
+  }
+}

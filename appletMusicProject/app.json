@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index", 
+    "pages/player/player",
+    "pages/search/search",
+    "pages/rank/rank",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#009688",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#009688",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "新歌",
+        "iconPath": "images/music1.png",
+        "selectedIconPath": "images/music.png"
+      },
+      {
+        "pagePath": "pages/rank/rank",
+        "text": "热歌榜",
+        "iconPath": "images/rank1.png",
+        "selectedIconPath": "images/rank.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜索页面",
+        "iconPath": "images/my1.png",
+        "selectedIconPath": "images/my.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

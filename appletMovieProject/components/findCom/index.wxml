@@ -1,0 +1,15 @@
+<!--components/findCom/index.wxml-->
+<wxs src="../../utils/tools.wxs" module="tools"/>
+<view class="section" class="{{special}}" >
+  <view class="h3">{{findItem.selection_title}}</view>
+  <view class="card" wx:for="{{findItem.list}}" wx:key="index" data-post='{{item.postid}}' bindtap="navigateToPlay">
+    <image class="img" src="{{item.image}}"></image>
+    <view class="dl">
+      <view class="dt">
+        <text wx:for="{{item.cates}}"  wx:for-item="cate" wx:for-index="idx" wx:key="idx">{{cate.catename}}</text>/
+        <text>{{tools.parseTime(item.duration)}}</text>
+      </view>
+      <view class="dd">{{item.title}}</view>
+    </view>
+  </view>
+</view>

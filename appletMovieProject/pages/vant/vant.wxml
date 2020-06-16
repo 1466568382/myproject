@@ -1,0 +1,88 @@
+<!--pages/vant/vant.wxml-->
+
+<van-nav-bar>
+  <!-- <van-icon name="search" slot="right" />
+  <van-icon name="circle" slot="left" /> -->
+  <van-tabs animated slot="title" color="#fff">
+    <!-- 发现 -->
+    <van-tab title="发现">
+      <!-- 轮播图 -->
+      <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="500" circular="true">
+        <block wx:for="{{findList.banner.list}}" wx:key="this">
+          <swiper-item data-post='{{item.extra_data.app_banner_param}}' bindtap="navigateToPlay">
+            <image class="swiperImg" src="{{item.image}}"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+      <findCom findItem="{{findList.today}}"></findCom>
+      <findCom findItem="{{findList.hot}}" special="special"></findCom>
+      <findCom findItem="{{findList.album}}"></findCom>
+      <findCom findItem="{{findList.posts}}"></findCom>
+      <!-- 下拉的数据 -->
+      <view wx:for="{{downData}}" wx:key="index">
+        <findCom findItem="{{item}}"></findCom>
+      </view>
+      <!-- loading -->
+      <van-loading size="24px" wx:if="{{showLoading}}">加载中...</van-loading>
+      <!-- 没有更多提示 -->
+      <van-notify id="van-notify" />
+    </van-tab>
+    <!-- 发现end -->
+    <!-- 分类 -->
+    <van-tab title="分类">
+      <view class="classifyBox">
+        <van-grid column-num="2" border="{{ false }}" square>
+          <!--  data-cateid="{{item.cateid}可以把id传到js里面操作 -->
+          <van-grid-item use-slot wx:for="{{ cateList}}" wx:key="index" data-cateid="{{item.cateid}}" bindtap="routeToPostsList">
+            <image style="width: 100%;" fit="cover" src="{{item.icon}}" />
+            <view class="classifyText">
+              <text>#{{item.catename}}#</text>
+            </view>
+          </van-grid-item>
+        </van-grid>
+      </view>
+    </van-tab>
+    <!-- 分类end -->
+    <!-- 搜索 -->
+    <van-tab title="搜索">
+      <view class="serchBox">
+      <view class="mySearch">
+          <van-search value="{{keyWord}}" placeholder="请输入搜索关键词" bind:search="getKeyWord" bind:change="searchChange" />
+      </view>
+        <view class="searchText" wx:if="{{showSearch!=true}}">
+          <view class="hot">
+            <view class="hotTitle">热门搜索</view>
+            <view class="hotContent">
+              <text class="hotItem" wx:for="{{hotSearchList}}" wx:key="index" data-item="{{item}}" bindtap="hotClickSearch">{{item}}</text>
+            </view>
+          </view>
+          
+          <view class="hot" wx:if="{{historyList.length!=0}}">
+            <view class="hotTitle">搜索历史 <text style="float:right" bindtap="clear">清空</text></view>
+            <view class="hotContent">
+              <text class="hotItem" wx:for="{{historyList}}" wx:key="index" data-item="{{item}}" bindtap="hotClickSearch">{{item}}</text>
+            </view>
+          </view>
+          
+        </view>
+        <view wx:if="{{showSearch}}" style="margin-top:54px">
+          <view wx:for="{{searchData}}" wx:for-index="searchId" wx:for-item="searchItem" wx:key="searchId">
+            <post-card wx:for="{{searchItem.list}}" wx:key="index" post="{{item}}"></post-card>
+          </view>
+          <view class="getmore" bindtap="getSearch" wx:if="{{showmore}}">点击获取更多 ></view>
+          <!-- loading -->
+          <van-loading size="24px" wx:if="{{showLoadingSearch}}">加载中...</van-loading>
+        </view>
+
+      </view>
+    </van-tab>
+    <!-- 搜索end -->
+  </van-tabs>
+</van-nav-bar>
+
+<!-- 遮罩 -->
+<van-overlay show="{{ show }}" bind:click="onClickHide">
+  <view class="wrapper">
+    <van-loading vertical color="#1989fa">加载中...</van-loading>
+  </view>
+</van-overlay>
