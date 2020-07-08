@@ -1,0 +1,66 @@
+.iconImg{
+    width: 20px;
+    height: 20px;
+    display: block;
+    z-index: 100;
+}
+.bookMall{
+    .bookImg{
+        .bookBox{
+            .image-area{
+                display: block;
+                margin: 120px auto 0;
+                width: 144px;
+                height: 144px;
+            }
+            .primary-label{
+                margin-top: 16px;
+                font-size: 15px;
+                line-height: 21px;
+                height: 21px;
+                text-align: center;
+                color: #999;
+            }
+            .primary-button{
+                display: block;
+                background: #23b383;
+                width: 180px;
+                height: 36px;
+                line-height: 36px;
+                text-align: center;
+                color: #ffffff;
+                border-radius: 4px;
+                margin: 100px auto 0;
+            }
+        }
+      
+    }
+}
+.am-list-item img {
+    width: 80px;
+    height: 100px;
+    float: left;
+    border-radius: 4px;
+    
+}
+.collect-text{
+    padding-left: 10px;
+    float: left;
+    width: 80px;
+    .collect-title{
+        color: #333;
+        font-size: 18px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 80px;
+    }
+    .collect-author{
+        margin-top: 5px;
+        font-size: 14px;
+        color: #999;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}

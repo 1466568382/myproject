@@ -1,0 +1,285 @@
+.loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .loading-img{
+
+    }
+}
+.detailHead{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    background-color: #23b383;
+    z-index: 99;
+    .icon{
+        position: absolute;
+        top: 52%;
+        transform: translateY(-50%);
+        left: 5px;
+    }
+}
+.detailContent{
+    margin-top: 30px;
+    padding: 0 16px;
+    .cover-info{
+        overflow: hidden;
+        padding: 20px 0;
+        .cover{
+            width: 44%;
+            float: left;
+            padding-right: 20px;
+            height: 130px;
+            img{
+                border-radius: 4px;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .info{
+            float: right;
+            width: 56%;
+            .title{
+                font-size: 19px;
+                line-height: 28px;
+                font-weight: bold;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .author{
+                margin-top: 6px;
+                height: 20px;
+                color: #999999;
+            }
+        }
+        .count{
+            margin-top: 60px;
+            font-size: 12px;
+            color: #999;
+        }
+    }
+}
+
+.analysis{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    .item{
+        flex: 1;
+        .text{
+            color: #999999;
+            font-size: 12px;
+        }
+        .num{
+            margin-top: 10px;
+            color: #23b383;
+        }
+    }
+}
+.cover-intro{
+    margin-top: 15px;
+    position: relative;
+    .titlebar{
+        font-size: 18px;
+        margin-bottom: 10px;
+    
+    }
+    .text{
+        font-size: 13px;
+        line-height: 22px;
+        color: #999;
+        position: relative;
+        overflow: hidden;
+        max-height: 66px;
+        
+    }
+    .unfold{
+        max-height:unset;
+        .up-icon{
+            color: #999999;
+            font-size: 10px;
+            vertical-align: middle;
+        }
+    }
+    .show{
+        position: absolute;
+        top: 72px;
+        background: url("../../images/detail/zdt.png") center center;
+        right: 0;
+        height: 22px;
+        width: 48px;
+        text-align: right;
+        .show-icon{
+            color: #999999;
+            font-size: 10px;
+        }
+    }
+    .hide{
+        display: none;
+        
+    }
+}
+
+.cover-tags{
+    padding: 10px 0 0;
+    height: 28px;
+    box-sizing: content-box;
+    overflow: hidden;
+    span{
+        border-radius: 2px;
+        color: #333;
+        font-size: 13px;
+        background: #f5f5f5;
+        line-height: 28px;
+        padding: 0 12px;
+        margin: 0 8px 10px 0;
+        display: inline-block;
+    }
+}
+.config-item{
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2{
+        flex: 3;
+    font-weight: bold;
+    height: 24px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    word-break: break-all;
+    word-wrap: break-word;
+    line-height: 24px;
+    margin: 0;
+    font-size: 17px;
+    color: #333;
+    }
+    .icon-text{
+      flex: 7;
+      font-size: 14px;
+      margin-right: 3px;
+      line-height: 24px;
+      height: 24px;
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      word-break: break-all;
+      word-wrap: break-word;
+      text-align: right;
+      padding-left: 10px;
+      color: #999999;
+    }
+    .config-icon{
+        color: #999999;
+    }
+}
+
+.recommend-books{
+    margin-top: 20px;
+    .titlebar{
+        display: flex;
+        align-items: center;
+        h2{
+            font-size: 18px;
+            height: 20px;
+            line-height: 20px;
+            flex: 1;
+            margin-right: 10px;
+        }
+        .right{
+            font-size: 14px;
+            height: 20px;
+            line-height: 20px;
+            color: #23b383;
+        }
+    }
+    .booklist-n3{
+        margin-top: 10px;
+        display: flex;
+        .booklist-item
+        {
+            padding: 0 5px;
+            flex: 1;
+            img{
+                width: 100%;
+                height: 128px;
+                border-radius: 4px;
+                background-color: #999999;
+            }
+            .text{
+                margin-top: 8px;
+                line-height: 16px;
+                height: 16px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                display: -webkit-box;
+                color: #000000;
+            }
+            .sub-text{
+                margin-top: 8px;
+                line-height: 16px;
+                font-size: 13px;
+                height: 16px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                display: -webkit-box;
+                color: #999;
+                margin-bottom: 58px;
+            }
+        }
+    }
+    
+}
+.btns{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    border-top: 1px solid #efefef;
+    height: 47px;
+    width: 100%;
+    padding: 0 16px;
+    background-color: #fff;
+    z-index: 99;
+    align-items: center;
+    text-align: center;
+    color: #23b383;
+    font-weight: bold;
+    .addBook{
+        flex: 1;
+    }
+    .yetAddBook{
+        flex: 1;
+        color: #cccccc;
+    }
+    .startRead{
+        flex: 1;
+        color:#23b383;
+    }
+}
